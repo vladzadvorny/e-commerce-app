@@ -23,6 +23,12 @@
     },
     "facebookAppId": "",
     "facebookScheme": "",
-    "facebookDisplayName": "ECommerce"
+    "facebookDisplayName": "ECommerce",
+     "extra": {
+      "googleAppId": {
+        "ios": "540163356266-gr0ahds47h3oet22hkdnjhml8c2j1t6i.apps.googleusercontent.com",
+        "android": "540163356266-f3e0uuua2ohrc4inf21bj58f7scd0n4t.apps.googleusercontent.com"
+      }
+    }
   }
 }

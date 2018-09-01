@@ -6,6 +6,7 @@ import OnboardingLogo from '../commons/OnboardingLogo';
 import LoginButton from '../commons/LoginButton';
 
 import FacebookApi from '../api/Facebook';
+import GoogleApi from '../api/Google';
 
 const BoxAnimated = Animated.createAnimatedComponent(Box);
 
@@ -39,8 +40,8 @@ class LoginScreen extends Component {
 
   onGooglePress = async () => {
     try {
-      // const token = await GoogleApi.loginAsync();
-      // console.log('token', token);
+      const token = await GoogleApi.loginAsync();
+      console.log('token', token);
     } catch (error) {
       console.log('error', error);
     }
