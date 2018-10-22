@@ -1,3 +1,4 @@
 export default {
-  logo: require('../../assets/brand_logo.png')
+  logo: require('../../assets/brandLogo.png'),
+  googleColorIcon: require('../../assets/googleIcon.png')
 }
