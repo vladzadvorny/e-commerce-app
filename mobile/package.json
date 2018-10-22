@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "debugger ": "open 'rndebugger://set-debugger-loc?host=localhost&port=19001'"
+    "debugger": "open 'rndebugger://set-debugger-loc?host=localhost&port=19001'"
   },
   "dependencies": {
     "@expo/vector-icons": "^8.0.0",
