@@ -4,6 +4,9 @@ import { Alert, Animated } from 'react-native'
 
 import OnboardingLogo from '../commons/OnboardingLogo'
 import LoginButton from '../commons/LoginButton'
+import { FacebookApi } from '../api/facebook'
+
+const BoxAnimated = Animated.createAnimatedComponent(Box)
 
 class LoginScreen extends Component {
   state = {
@@ -39,8 +42,14 @@ class LoginScreen extends Component {
     Alert.alert('Google Press')
   }
 
-  onFacebookPress = () => {
-    Alert.alert('Facebook Press')
+  onFacebookPress = async () => {
+    try {
+      const token = await FacebookApi.loginAsync()
+
+      console.log('token', token)
+    } catch (error) {
+      console.log('error', error)
+    }
   }
 
   render() {
@@ -53,7 +62,7 @@ class LoginScreen extends Component {
 
     return (
       <Box f={1} center bg="white">
-        <Animated.View
+        <BoxAnimated
           style={{
             flex: 1,
 
@@ -67,16 +76,16 @@ class LoginScreen extends Component {
           <Box f={1} center>
             <OnboardingLogo />
           </Box>
-        </Animated.View>
+        </BoxAnimated>
 
-        <Animated.View style={{ flex: 0.9, width: '100%', opacity }}>
+        <BoxAnimated style={{ flex: 0.9, width: '100%', opacity }}>
           <LoginButton onPress={this.onGooglePress} type="google">
             Continue with Google
           </LoginButton>
           <LoginButton onPress={this.onFacebookPress} type="facebook">
             Continue with Facebook
           </LoginButton>
-        </Animated.View>
+        </BoxAnimated>
       </Box>
     )
   }
