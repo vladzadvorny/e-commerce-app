@@ -1,12 +1,10 @@
-import { Image } from 'react-native';
-import { Asset } from 'expo';
+import { Image } from 'react-native'
+import { Asset } from 'expo'
 
-export function cacheImages(images) {
-  return images.map(image => {
+export default images =>
+  images.map(image => {
     if (typeof image === 'string') {
-      return Image.prefetch(image);
+      return Image.prefetch(image)
     }
-
-    return Asset.fromModule(image).downloadAsync();
-  });
-}
+    return Asset.fromModule(image).downloadAsync()
+  })

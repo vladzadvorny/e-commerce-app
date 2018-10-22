@@ -1,7 +1,7 @@
 const color = {
   black: '#212121',
 
-  greyDarkest: '#242424',
+  greyDarkest: '#24242',
   greyDarker: '#616161',
   greyDark: '#757575',
   grey: '#9e9e9e',
@@ -38,14 +38,11 @@ const color = {
   greenDarkest: '#1b5e20',
   greenDarker: '#2e7d32',
   greenDark: '#388e3c',
-  green: '#4caf50',
+  green: '#42B029',
   greenLight: '#66bb6a',
   greenLighter: '#81c784',
-  greenLightest: '#a5d6a7',
-
-  googleBlue: '#1976D2',
-  facebookBlue: '#4D6FA9'
-};
+  greenLightest: '#a5d6a7'
+}
 
 const theme = {
   text: {
@@ -73,13 +70,10 @@ const theme = {
       normal: 1.5,
       large: 2
     },
-    fonts: {
-      base: null
-    }
+    font: null
   },
   color,
   space: {
-    '2xs': 6,
     xs: 8,
     sm: 16,
     md: 24,
@@ -87,19 +81,11 @@ const theme = {
     xl: 40
   },
   radius: {
-    '2xs': 3,
     xs: 6,
     sm: 10,
     base: 14,
     lg: 20,
     xl: 30
-  },
-  opacity: {
-    none: 0,
-    low: 0.3,
-    demi: 0.5,
-    high: 0.8,
-    base: 1
   },
   shadows: [
     {
@@ -140,7 +126,6 @@ const theme = {
       opacity: 0.5
     }
   }
-};
+}
 
-// eslint-disable-next-line
-export { theme };
+export default theme

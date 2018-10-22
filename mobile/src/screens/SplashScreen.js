@@ -1,29 +1,42 @@
-import React, { Component } from 'react';
-import { Box } from 'react-native-design-utility';
+import React, { Component } from 'react'
+import { Box, Text } from 'react-native-design-utility'
+import { Image } from 'react-native'
 
-import OnboardingLogo from '../commons/OnboardingLogo';
+import images from '../constants/images'
 
 class SplashScreen extends Component {
-  state = {};
+  state = {}
 
   componentDidMount() {
-    this.checkAuth();
+    this.checkAuth()
   }
 
   checkAuth = () => {
+    const { navigation } = this.props
+
     setTimeout(() => {
-      const { navigation } = this.props;
-      navigation.navigate('Auth');
-    }, 5000);
-  };
+      navigation.navigate('Auth')
+    }, 1000)
+  }
 
   render() {
     return (
       <Box f={1} center>
-        <OnboardingLogo />
+        <Box mb="sm">
+          <Image source={images.logo} />
+        </Box>
+        <Box mb="sm">
+          <Text size="2xl">
+            In
+            <Text color="green" size="2xl">
+              Store
+            </Text>
+          </Text>
+        </Box>
+        <Text size="sm">easy grocery shopping.</Text>
       </Box>
-    );
+    )
   }
 }
 
-export default SplashScreen;
+export default SplashScreen

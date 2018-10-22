@@ -6,24 +6,22 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject",
-    "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=19001'"
+    "eject": "expo eject"
   },
   "dependencies": {
-    "@expo/vector-icons": "^6.3.1",
-    "expo": "^29.0.0",
+    "expo": "^30.0.1",
     "react": "16.3.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
-    "react-native-design-utility": "^0.0.28",
-    "react-navigation": "2.11.2"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-native-design-utility": "^0.0.30",
+    "react-navigation": "^2.18.0"
   },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "eslint": "^5.4.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.0.1",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1"
   }
 }

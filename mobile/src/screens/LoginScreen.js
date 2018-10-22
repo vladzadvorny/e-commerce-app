@@ -1,98 +1,16 @@
-import React, { Component } from 'react';
-import { Box } from 'react-native-design-utility';
-import { Animated } from 'react-native';
-
-import OnboardingLogo from '../commons/OnboardingLogo';
-import LoginButton from '../commons/LoginButton';
-
-import FacebookApi from '../api/Facebook';
-import GoogleApi from '../api/Google';
-
-const BoxAnimated = Animated.createAnimatedComponent(Box);
+import React, { Component } from 'react'
+import { Box, Text } from 'react-native-design-utility'
 
 class LoginScreen extends Component {
-  state = {
-    opacity: new Animated.Value(0),
-    position: new Animated.Value(0)
-  };
-
-  componentDidMount() {
-    Animated.parallel([this.positionAnim(), this.opacityAnim()]).start();
-  }
-
-  opacityAnim = () => {
-    const { opacity } = this.state;
-    Animated.timing(opacity, {
-      toValue: 1,
-      duration: 200,
-      delay: 100
-    }).start();
-  };
-
-  positionAnim = () => {
-    const { position } = this.state;
-    Animated.timing(position, {
-      toValue: 1,
-      duration: 300,
-      useNativeDriver: true
-    }).start();
-  };
-
-  onGooglePress = async () => {
-    try {
-      const token = await GoogleApi.loginAsync();
-      console.log('token', token);
-    } catch (error) {
-      console.log('error', error);
-    }
-  };
-
-  onFacebookPress = async () => {
-    try {
-      const token = await FacebookApi.loginAsync();
-
-      console.log('token', token);
-    } catch (error) {
-      console.log('error', error);
-    }
-  };
+  state = {}
 
   render() {
-    const { opacity, position } = this.state;
-
-    const logoTranslate = position.interpolate({
-      inputRange: [0, 1],
-      outputRange: [150, 0]
-    });
-
     return (
       <Box f={1} center bg="white">
-        <BoxAnimated
-          f={1}
-          style={{
-            transform: [
-              {
-                translateY: logoTranslate
-              }
-            ]
-          }}
-        >
-          <Box f={1} center>
-            <OnboardingLogo />
-          </Box>
-        </BoxAnimated>
-
-        <BoxAnimated f={0.9} style={{ opacity }}>
-          <LoginButton onPress={this.onGooglePress} type="google">
-            Continue with Google
-          </LoginButton>
-          <LoginButton onPress={this.onFacebookPress} type="facebook">
-            Continue with Facebook
-          </LoginButton>
-        </BoxAnimated>
+        <Text>Login Screen</Text>
       </Box>
-    );
+    )
   }
 }
 
-export default LoginScreen;
+export default LoginScreen
