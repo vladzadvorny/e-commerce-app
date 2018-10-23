@@ -36,6 +36,6 @@ app.listen(3001, err => {
   if (err) {
     console.error(err)
   } else {
-    console.log(`Server listen on port 3000`)
+    console.log(`Server listen on port 3001`)
   }
 })

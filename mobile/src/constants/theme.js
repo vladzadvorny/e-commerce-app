@@ -73,10 +73,13 @@ const theme = {
       normal: 1.5,
       large: 2
     },
-    font: null
+    fonts: {
+      base: null
+    }
   },
   color,
   space: {
+    '2xs': 6,
     xs: 8,
     sm: 16,
     md: 24,
@@ -84,11 +87,19 @@ const theme = {
     xl: 40
   },
   radius: {
+    '2xs': 3,
     xs: 6,
     sm: 10,
     base: 14,
     lg: 20,
     xl: 30
+  },
+  opacity: {
+    none: 0,
+    low: 0.3,
+    demi: 0.5,
+    high: 0.8,
+    base: 1
   },
   shadows: [
     {

@@ -5,6 +5,8 @@ import {
 } from 'react-navigation'
 import React, { Component } from 'react'
 
+import { NavigationService } from '../api/NavigationService'
+
 const AuthNavigator = createStackNavigator(
   {
     Login: {
@@ -45,7 +47,7 @@ class Navigation extends Component {
   state = {}
 
   render() {
-    return <AppNavigator />
+    return <AppNavigator ref={r => NavigationService.setTopLevelNavigator(r)} />
   }
 }
 

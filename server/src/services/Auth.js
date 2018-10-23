@@ -18,9 +18,7 @@ const createToken = user => {
   return jwt.sign(payload, JWT_SECRET, JWT_OPTS)
 }
 
-const verifyToken = token => {
-  return jwt.verify(token, JWT_SECRET, JWT_OPTS)
-}
+const verifyToken = token => jwt.verify(token, JWT_SECRET, JWT_OPTS)
 
 const getTokenFromHeaders = req => {
   const token = req.headers.authorization

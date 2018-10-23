@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Box } from 'react-native-design-utility'
-import { Alert, Animated } from 'react-native'
+import { Animated } from 'react-native'
+import { inject } from 'mobx-react/native'
 
 import OnboardingLogo from '../commons/OnboardingLogo'
 import LoginButton from '../commons/LoginButton'
@@ -9,6 +10,7 @@ import { GoogleApi } from '../api/google'
 
 const BoxAnimated = Animated.createAnimatedComponent(Box)
 
+@inject('currentUser')
 class LoginScreen extends Component {
   state = {
     opacity: new Animated.Value(0),
@@ -40,10 +42,11 @@ class LoginScreen extends Component {
   }
 
   onGooglePress = async () => {
+    const { currentUser } = this.props
     try {
       const token = await GoogleApi.loginAsync()
 
-      console.log('token', token)
+      await currentUser.login(token, 'GOOGLE')
     } catch (error) {
       console.log('error', error)
     }

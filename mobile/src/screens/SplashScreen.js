@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Box } from 'react-native-design-utility'
+import { inject } from 'mobx-react/native'
 
 import OnboardingLogo from '../commons/OnboardingLogo'
 
+@inject('currentUser')
 class SplashScreen extends Component {
   state = {}
 
@@ -10,11 +12,9 @@ class SplashScreen extends Component {
     this.checkAuth()
   }
 
-  checkAuth = () => {
-    const { navigation } = this.props
-
-    // setTimeout(() => {
-    navigation.navigate('Auth')
+  checkAuth = async () => {
+    const { currentUser } = this.props
+    await currentUser.setupAuth()
     // }, 1000)
   }
 
