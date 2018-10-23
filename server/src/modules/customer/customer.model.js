@@ -1,8 +1,8 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose from 'mongoose'
 
 import { PROVIDER_ENUM } from '../../constants'
 
-const CustomerSchema = new Schema(
+const CustomerSchema = new mongoose.Schema(
   {
     firstName: String,
     lastName: String,
