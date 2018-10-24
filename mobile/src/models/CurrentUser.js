@@ -22,13 +22,16 @@ export const CurrentUser = types
     /* eslint-disable func-names */
     /* eslint-disable no-param-reassign */
     setupAuth: flow(function*() {
+      console.log('SETUP')
       yield self.getAuthToken()
       yield self.getUserInfo()
     }),
 
     getAuthToken: flow(function*() {
+      console.log('TOKEN')
       try {
         const token = yield AsyncStorage.getItem(TOKEN_KEY)
+        console.log('token', token)
 
         if (token) {
           self.authToken = token
@@ -77,6 +80,8 @@ export const CurrentUser = types
             .headers({ Authorization: `Bearer ${self.authToken}` })
             .get()
             .json()
+
+          console.log(res)
 
           self.info = res
 

@@ -4,8 +4,8 @@ import { UtilityThemeProvider, Box } from 'react-native-design-utility'
 import { Provider } from 'mobx-react/native'
 
 import Navigation from './src/screens'
-import theme from './src/constants/theme'
-import images from './src/constants/images'
+import { theme } from './src/constants/theme'
+import { images, tabBarIcons } from './src/constants/images'
 import cacheImages from './src/utils/cacheImages'
 import { store } from './src/models'
 
@@ -19,7 +19,11 @@ export default class App extends Component {
   }
 
   cacheAssets = async () => {
-    const imagesAssets = cacheImages(Object.values(images))
+    const imagesAssets = cacheImages([
+      ...Object.values(images),
+      ...Object.values(tabBarIcons.active),
+      ...Object.values(tabBarIcons.inactive)
+    ])
     await Promise.all([...imagesAssets])
     this.setState({ isReady: true })
   }

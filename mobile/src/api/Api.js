@@ -1,3 +1,5 @@
 import wretch from 'wretch'
 
-export const customersApi = wretch('http://192.168.1.53:3001/api/v1/customers')
+import { BASE_URL } from '../constants'
+
+export const customersApi = wretch(`${BASE_URL}/customers`)
